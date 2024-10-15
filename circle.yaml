@@ -1,0 +1,20 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk  # Utilise Java 8 ou supérieur
+    steps:
+      - checkout                       # Récupère le code source du dépôt
+      - run:
+          name: "Run Maven tests"
+          command: mvn test            # Exécute les tests unitaires avec Maven
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master             # Se déclenche uniquement sur la branche master
