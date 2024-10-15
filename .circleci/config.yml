@@ -24,10 +24,11 @@ jobs:
       - checkout
       - run:
           name: "Run tests with coverage"
-          command: mvn test  # This runs your Maven tests, adjust if necessary
+          command: mvn -B -DskipTests clean package  # This runs your Maven tests, adjust if necessary
       - run:
           name: Test and Generate Coverage
           command: mvn test jacoco:report 
+
       - codecov/upload:  # Upload coverage report to Codecov
           file: target/site/jacoco/jacoco.xml 
 # Define workflows
