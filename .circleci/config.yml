@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test-java:
     docker:
-      - image: cimg/openjdk22.0  # Remplacez par cimg/openjdk:8.0 si Java 8 est nécessaire
+      - image: cimg/openjdk:22.0  # Assurez-vous que c'est la version correcte d'OpenJDK
     steps:
       - checkout
       - run:
@@ -23,14 +23,20 @@ jobs:
           paths:
             - ~/.m2/repository
 
+  say-hello:
+    docker:
+      - image: cimg/python:3.9  # Utilisation d'une image Python, mais vous pouvez choisir une autre image si nécessaire
+    steps:
+      - run:
+          name: Say Hello
+          command: echo "Hello, CircleCI!"
+
 workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
-      - test  # This will run the test job that uploads the coverage report
+  version: 2
   build-and-test:
     jobs:
-      - test-java:
+      - say-hello  # Ce job affiche "Hello" avant les tests
+      - test-java:  # Ce job exécute les tests
           filters:
             branches:
               only:
