@@ -16,6 +16,7 @@ import org.junit.Test;
 
 public class IPokemonTrainerFactoryTest {
 
+
     @Test
     public void createTrainerTest() {
         // Mocking the dependencies
