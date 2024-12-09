@@ -15,6 +15,7 @@ public class IPokedexFactoryTest {
         IPokedex mockPokedex = mock(IPokedex.class);
         when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory)).thenReturn(mockPokedex);
 
+
         // Créer le Pokedex et tester
         IPokedex createdPokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
         assertNotNull(createdPokedex);
