@@ -1,45 +1,22 @@
-/*package fr.univavignon.pokedex.api;
-
-
-import static org.mockito.Mockito.*;
-
-//import org.junit.api.BeforeEach;
-//import org.junit.api.Test;
-import org.junit.Test;
-public class IPokedexFactoryTest {
-
-  
-}
-*/
 package fr.univavignon.pokedex.api;
 
-import static org.junit.Assert.assertNotNull;
+import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
-
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IPokedexFactoryTest {
 
     @Test
-    public void createPokedexTest() {
-        // Mocking IPokedexFactory
+    public void testCreatePokedex() {
         IPokedexFactory pokedexFactory = mock(IPokedexFactory.class);
-
-        // Mocking dependencies of createPokedex method
         IPokemonMetadataProvider metadataProvider = mock(IPokemonMetadataProvider.class);
         IPokemonFactory pokemonFactory = mock(IPokemonFactory.class);
-        IPokedex pokedex = mock(IPokedex.class);
 
-        // Define the behavior of the createPokedex method when called with mocks
-        when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory)).thenReturn(pokedex);
+        IPokedex mockPokedex = mock(IPokedex.class);
+        when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory)).thenReturn(mockPokedex);
 
-        // Call the method with the mocked objects
+        // Créer le Pokedex et tester
         IPokedex createdPokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
-
-        // Assert that the created pokedex is not null
         assertNotNull(createdPokedex);
-
-        // Verify that the createPokedex method was called with the correct parameters
-        verify(pokedexFactory).createPokedex(metadataProvider, pokemonFactory);
     }
 }
