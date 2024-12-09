@@ -24,6 +24,10 @@ jobs:
             - ~/.m2/repository
 
 workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
+      - test  # This will run the test job that uploads the coverage report
   build-and-test:
     jobs:
       - test-java:
