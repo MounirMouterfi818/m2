@@ -1,10 +1,13 @@
 version: 2.1
 
-jobs:
-  test-java:
+executors:
+  default-executor:
     docker:
       - image: cimg/openjdk:11.0 # Remplacez par cimg/openjdk:8.0 si Java 8 est nécessaire
 
+jobs:
+  test-java:
+    executor: default-executor
     steps:
       - checkout
 
