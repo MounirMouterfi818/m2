@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test-java:
     docker:
-      - image: cimg/openjdk:11.0
+      - image: cimg/openjdk:11.0 # Remplacez par cimg/openjdk:8.0 si Java 8 est nécessaire
 
     steps:
       - checkout
@@ -30,6 +30,7 @@ jobs:
             - ~/.m2/repository
 
 workflows:
+  version: 2
   build-and-test:
     jobs:
       - test-java:
