@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="fr.univavignon.pokedex.api.IPokedexFactoryTest" time="5.387" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="fr.univavignon.pokedex.api.IPokedexFactoryTest" time="4.433" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Users\windows\.jdks\openjdk-22.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\windows\AppData\Local\Temp\surefire10931117998597212753\surefirebooter-20241209092814756_3.jar C:\Users\windows\AppData\Local\Temp\surefire10931117998597212753 2024-12-09T09-28-14_387-jvmRun1 surefire-20241209092814756_1tmp surefire_0-20241209092814756_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\windows\AppData\Local\Temp\surefire8021371882512184804\surefirebooter-20241209094241768_3.jar C:\Users\windows\AppData\Local\Temp\surefire8021371882512184804 2024-12-09T09-42-41_017-jvmRun1 surefire-20241209094241768_1tmp surefire_0-20241209094241768_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="M:\tdt\target\test-classes;M:\tdt\target\classes;C:\Users\windows\.m2\repository\org\mockito\mockito-core\5.12.0\mockito-core-5.12.0.jar;C:\Users\windows\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\windows\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.15\byte-buddy-agent-1.14.15.jar;C:\Users\windows\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\windows\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\windows\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\windows\AppData\Local\Temp\surefire10931117998597212753\surefirebooter-20241209092814756_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\windows\AppData\Local\Temp\surefire8021371882512184804\surefirebooter-20241209094241768_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.1+8-16"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="createPokedexTest" classname="fr.univavignon.pokedex.api.IPokedexFactoryTest" time="5.213">
+  <testcase name="createPokedexTest" classname="fr.univavignon.pokedex.api.IPokedexFactoryTest" time="4.236">
     <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting com/sun/tools/attach/VirtualMachine with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
@@ -141,7 +141,7 @@ WARNING: A Java agent has been loaded dynamically (C:\Users\windows\.m2\reposito
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$T58A7Cq0 with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$reQGMZa9 with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -206,7 +206,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$T58A7Cq0 with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$reQGMZa9 with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -219,7 +219,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$T58A7Cq0$auxiliary$bio2FNEZ with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$reQGMZa9$auxiliary$xdA0olJ2 with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -284,7 +284,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$T58A7Cq0$auxiliary$bio2FNEZ with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$reQGMZa9$auxiliary$xdA0olJ2 with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -297,7 +297,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$T58A7Cq0$auxiliary$6fECVnsZ with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$reQGMZa9$auxiliary$ZP0D1dya with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -362,7 +362,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$T58A7Cq0$auxiliary$6fECVnsZ with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedexFactory$MockitoMock$reQGMZa9$auxiliary$ZP0D1dya with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -375,7 +375,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$Z6TJ5KrG with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$rmQF0lqY with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -440,7 +440,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$Z6TJ5KrG with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$rmQF0lqY with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -453,7 +453,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$Z6TJ5KrG$auxiliary$qHhb8JQr with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$rmQF0lqY$auxiliary$TvGAjuXH with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -518,7 +518,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$Z6TJ5KrG$auxiliary$qHhb8JQr with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$rmQF0lqY$auxiliary$TvGAjuXH with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -531,7 +531,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$Z6TJ5KrG$auxiliary$i9SWp8ko with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$rmQF0lqY$auxiliary$Avd9uRPv with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -596,7 +596,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$Z6TJ5KrG$auxiliary$i9SWp8ko with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonMetadataProvider$MockitoMock$rmQF0lqY$auxiliary$Avd9uRPv with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -609,7 +609,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$G6KhEL5H with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$SESsOWxz with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -674,7 +674,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$G6KhEL5H with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$SESsOWxz with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -687,7 +687,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$G6KhEL5H$auxiliary$8wPdAXT2 with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$SESsOWxz$auxiliary$QvfrbKQP with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -752,7 +752,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$G6KhEL5H$auxiliary$8wPdAXT2 with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$SESsOWxz$auxiliary$QvfrbKQP with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -765,7 +765,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$G6KhEL5H$auxiliary$JHNlg1iS with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$SESsOWxz$auxiliary$gT51O3Sb with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -830,7 +830,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$G6KhEL5H$auxiliary$JHNlg1iS with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokemonFactory$MockitoMock$SESsOWxz$auxiliary$gT51O3Sb with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -843,7 +843,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$nstQ3MIG with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$VmOuJCAV with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -908,7 +908,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$nstQ3MIG with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$VmOuJCAV with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -921,7 +921,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$nstQ3MIG$auxiliary$tYL0FSA2 with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$VmOuJCAV$auxiliary$F94dALjw with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -986,7 +986,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$nstQ3MIG$auxiliary$tYL0FSA2 with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$VmOuJCAV$auxiliary$F94dALjw with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
@@ -999,7 +999,7 @@ Caused by: java.lang.IllegalArgumentException: Unsupported class file major vers
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:77)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:109)
 	... 64 more
-java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$nstQ3MIG$auxiliary$ZTMZM5Av with JaCoCo 0.8.10.202304240956/8ea9668.
+java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$VmOuJCAV$auxiliary$KIU7NAFL with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:242)
 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
@@ -1064,7 +1064,7 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting fr/u
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$nstQ3MIG$auxiliary$ZTMZM5Av with JaCoCo 0.8.10.202304240956/8ea9668.
+Caused by: java.io.IOException: Error while instrumenting fr/univavignon/pokedex/api/IPokedex$MockitoMock$VmOuJCAV$auxiliary$KIU7NAFL with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrumentError(Instrumenter.java:161)
 	at org.jacoco.agent.rt.internal_4a7f17c.core.instr.Instrumenter.instrument(Instrumenter.java:111)
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:92)
