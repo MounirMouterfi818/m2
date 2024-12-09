@@ -3,14 +3,14 @@ version: 2.1
 jobs:
   test-java:
     docker:
-      - image: cimg/openjdk:11.0  # Remplacez par cimg/openjdk:8.0 si Java 8 est nécessaire
+      - image: cimg/openjdk:11.0
     steps:
       - checkout
       - run:
           name: Calculate cache key
-          command: |-
+          command: |
             find . -name 'pom.xml' -o -name 'gradlew*' -o -name '*.gradle*' | \
-                    sort | xargs cat > /tmp/CIRCLECI_CACHE_KEY
+              sort | xargs cat > /tmp/CIRCLECI_CACHE_KEY
       - restore_cache:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
       - run:
@@ -24,6 +24,7 @@ jobs:
             - ~/.m2/repository
 
 workflows:
+  version: 2
   build-and-test:
     jobs:
       - test-java:
