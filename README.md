@@ -1,5 +1,44 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+# Projet de CI/CD
+
+**Nom :** Mounir Mouterfi
+**Groupe :** M1IA
+
+## Description
+
+Ce projet met en place une pipeline CI/CD utilisant CircleCI pour automatiser l'exécution des tests et l'intégration continue. Nous utilisons également JaCoCo pour générer des rapports de couverture de tests et Codecov pour visualiser la couverture directement dans GitHub.
+
+## Choix techniques
+
+- **CircleCI :** Nous avons utilisé CircleCI pour orchestrer notre pipeline d'intégration continue. Le workflow comprend l'exécution des tests unitaires avec Maven sur une image Docker contenant le JDK.
+- **JaCoCo :** Pour générer la couverture de code, nous utilisons JaCoCo. Cela permet de mesurer le pourcentage de code couvert par les tests unitaires.
+- **Codecov :** Nous avons intégré Codecov pour télécharger et visualiser la couverture de test générée par JaCoCo. Cela nous permet de suivre la qualité du code tout au long du développement.
+
+## Badges
+
+![CircleCI](https://circleci.com/gh/MounirMouterfi818/m2.svg?style=shield)
+![Codecov](https://codecov.io/gh/MounirMouterfi818/m2/branch/main/graph/badge.svg)
+
+- **CircleCI Badge :** Indicateur du statut actuel des builds dans CircleCI.
+- **Codecov Badge :** Indicateur de la couverture de code pour le projet, généré par Codecov.
+
+## Instructions
+
+1. Clonez ce dépôt.
+2. Assurez-vous d'avoir Java 22 et Maven installés sur votre machine.
+3. Exécutez les tests en local avec la commande suivante :
+    ```bash
+    mvn clean verify
+    ```
+4. Poussez vos modifications sur la branche `main` pour voir les résultats dans CircleCI et Codecov.
+
+## Liens Utiles
+
+- [CircleCI Dashboard](https://circleci.com/gh/username/repository)
+- [Codecov Dashboard](https://codecov.io/gh/username/repository)
+
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
