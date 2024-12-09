@@ -1,4 +1,9 @@
 version: 2.1
+
+# Ajout de l'orb de Codecov
+orbs:
+  codecov: codecov/codecov@5
+
 jobs:
   test-java:  # Job pour exécuter les tests et générer la couverture de code
     docker:
@@ -24,7 +29,7 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}  # Sauvegarde le cache pour les dépendances Maven
           paths:
             - ~/.m2/repository  # Cache les dépendances Maven pour une exécution plus rapide
-
+      - codecov/upload  # Ajoute l'étape Codecov pour uploader les résultats de couverture
 
 workflows:
   version: 2
@@ -34,4 +39,4 @@ workflows:
           filters:
             branches:
               only:
-                - main  # Exécute uniquement sur la branche master
+                - main  # Exécute uniquement sur la branche main
