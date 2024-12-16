@@ -1,4 +1,5 @@
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonTrainer.java
+M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonMetadataProvider.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokedexFactory.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\IPokedex.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\IPokemonTrainerFactory.java
@@ -8,6 +9,8 @@ M:\tdt\src\main\java\fr\univavignon\pokedex\api\Team.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\IPokedexFactory.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonComparators.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\IPokemonMetadataProvider.java
+M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonTrainerFactory.java
+M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonFactory.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonMetadata.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokedexException.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\IPokemonFactory.java
