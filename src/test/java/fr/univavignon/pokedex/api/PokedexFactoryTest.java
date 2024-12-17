@@ -57,6 +57,7 @@ public class PokedexFactoryTest {
     public void testPokedexAddAndRetrievePokemon() throws PokedexException {
         IPokedex pokedex = factory.createPokedex(metadataProvider, pokemonFactory);
 
+
         Pokemon pokemon = new Pokemon(1, "Ivysaur", 600, 250, 4000, 4000, 4, 150, 120, 95.0);
         int index = pokedex.addPokemon(pokemon);
 
