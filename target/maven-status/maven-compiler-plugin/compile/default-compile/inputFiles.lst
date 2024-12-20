@@ -12,5 +12,6 @@ M:\tdt\src\main\java\fr\univavignon\pokedex\api\IPokemonMetadataProvider.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonTrainerFactory.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonFactory.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokemonMetadata.java
+M:\tdt\src\main\java\fr\univavignon\pokedex\api\RocketPokemonFactory.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\PokedexException.java
 M:\tdt\src\main\java\fr\univavignon\pokedex\api\IPokemonFactory.java
