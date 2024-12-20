@@ -5,41 +5,60 @@ orbs:
   codecov: codecov/codecov@5
 
 jobs:
-  test-java:  # Job pour exécuter les tests, générer la couverture de code et valider le style du code
+  checkstyle-java:  # Job pour valider le style du code avec Checkstyle
     docker:
-      - image: cimg/openjdk:22.0  # Utilisez cimg/openjdk:22.0
+      - image: cimg/openjdk:22.0
     steps:
       - checkout  # Récupère le code source
       - run:
           name: Set JAVA_HOME
           command: |
             echo "Setting JAVA_HOME"
-            export JAVA_HOME=/usr/local/openjdk-22  # Assurez-vous que le chemin correspond au JDK
+            export JAVA_HOME=/usr/local/openjdk-22
             echo "JAVA_HOME=$JAVA_HOME"
-      - restore_cache:
-          key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}  # Restaure le cache en utilisant le checksum
       - run:
           name: Run Checkstyle
           command: mvn checkstyle:check  # Exécute Checkstyle pour valider le style du code
+
+  test-java:  # Job pour exécuter les tests et générer la couverture de code
+    docker:
+      - image: cimg/openjdk:22.0
+    steps:
+      - checkout  # Récupère le code source
+      - run:
+          name: Set JAVA_HOME
+          command: |
+            echo "Setting JAVA_HOME"
+            export JAVA_HOME=/usr/local/openjdk-22
+            echo "JAVA_HOME=$JAVA_HOME"
+      - restore_cache:
+          key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
       - run:
           name: Run Maven Tests with Coverage
           command: mvn verify  # Exécute les tests Maven avec JaCoCo
       - store_test_results:
-          path: target/surefire-reports  # Sauvegarde les résultats des tests
+          path: target/surefire-reports
       - store_artifacts:
-          path: target/site/jacoco  # Sauvegarde le rapport de couverture généré par JaCoCo
+          path: target/site/jacoco
       - save_cache:
-          key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}  # Sauvegarde le cache pour les dépendances Maven
+          key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
           paths:
-            - ~/.m2/repository  # Cache les dépendances Maven pour une exécution plus rapide
-      - codecov/upload  # Ajoute l'étape Codecov pour uploader les résultats de couverture
+            - ~/.m2/repository
+      - codecov/upload
 
 workflows:
   version: 2
   build-and-test:
     jobs:
-      - test-java:  # Ce job exécute les tests et valide le style du code
+      - checkstyle-java:  # Exécute Checkstyle en premier
           filters:
             branches:
               only:
-                - main  # Exécute uniquement sur la branche main
+                - main
+      - test-java:  # Ce job exécute les tests et vérifie la couverture
+          requires:
+            - checkstyle-java  # Dépend de la réussite de Checkstyle
+          filters:
+            branches:
+              only:
+                - main
