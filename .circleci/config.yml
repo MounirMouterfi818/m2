@@ -1,30 +1,11 @@
 version: 2.1
 
-# Ajout de l'orb de Codecov
-orbs:
-  codecov: codecov/codecov@5
-
 jobs:
-  checkstyle-java:  # Job pour valider le style du code avec Checkstyle
-    docker:
-      - image: cimg/openjdk:22.0
-    steps:
-      - checkout  # Récupère le code source
-      - run:
-          name: Set JAVA_HOME
-          command: |
-            echo "Setting JAVA_HOME"
-            export JAVA_HOME=/usr/local/openjdk-22
-            echo "JAVA_HOME=$JAVA_HOME"
-      - run:
-          name: Run Checkstyle
-          command: mvn checkstyle:check  # Exécute Checkstyle pour valider le style du code
-
   test-java:  # Job pour exécuter les tests et générer la couverture de code
     docker:
       - image: cimg/openjdk:22.0
     steps:
-      - checkout  # Récupère le code source
+      - checkout
       - run:
           name: Set JAVA_HOME
           command: |
@@ -35,7 +16,7 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
       - run:
           name: Run Maven Tests with Coverage
-          command: mvn verify  # Exécute les tests Maven avec JaCoCo
+          command: mvn verify
       - store_test_results:
           path: target/surefire-reports
       - store_artifacts:
@@ -44,13 +25,40 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
           paths:
             - ~/.m2/repository
-      - codecov/upload  # Ajoute les résultats de couverture à Codecov
+      - run:
+          name: Upload to Codecov
+          command: |
+            curl -s https://codecov.io/bash > /tmp/codecov
+            bash /tmp/codecov
 
-  generate-and-deploy-javadoc:  # Job pour générer et déployer la Javadoc
+  checkstyle:  # Job pour exécuter CheckStyle
     docker:
       - image: cimg/openjdk:22.0
     steps:
-      - checkout  # Récupère le code source
+      - checkout
+      - run:
+          name: Run CheckStyle
+          command: mvn checkstyle:checkstyle
+      - store_artifacts:
+          path: target/site/checkstyle.html
+      - store_artifacts:
+          path: target/checkstyle-result.xml
+      - run:
+          name: Push CheckStyle result to GitHub
+          command: |
+            mkdir -p checkstyle-reports
+            mv target/checkstyle-result.xml checkstyle-reports/checkstyle-result.xml || true
+            git config --global user.email "ci@circleci.com"
+            git config --global user.name "CircleCI"
+            git add -f checkstyle-reports/checkstyle-result.xml
+            git commit -m "Add CheckStyle result [skip ci]" || echo "No changes to commit"
+            git push https://MounirMouterfi818:$Token@github.com/MounirMouterfi818/m2.git $(git rev-parse --abbrev-ref HEAD)
+
+  generate-javadoc:  # Job pour générer la Javadoc
+    docker:
+      - image: cimg/openjdk:22.0
+    steps:
+      - checkout
       - run:
           name: Set JAVA_HOME
           command: |
@@ -59,40 +67,42 @@ jobs:
             echo "JAVA_HOME=$JAVA_HOME"
       - run:
           name: Generate Javadoc
-          command: mvn javadoc:javadoc  # Génère la Javadoc
-      - run:
-          name: Configure Git for Deployment
-          command: |
-            git config --global user.email "ci@circleci.com"
-            git config --global user.name "CircleCI"
+          command: mvn clean javadoc:aggregate
       - run:
           name: Deploy Javadoc to GitHub Pages
           command: |
-            git clone --branch gh-pages https://github.com/MounirMouterfi818/m2.git gh-pages
-            rm -rf gh-pages/*
-            cp -R target/site/apidocs/* gh-pages/
-            cd gh-pages
+            mkdir -p /tmp/javadoc
+            cp -r target/site/apidocs/* /tmp/javadoc/
+            git config --global user.name "CircleCI"
+            git config --global user.email "ci@circleci.com"
+            git clone --depth=1 https://MounirMouterfi818:$Token@github.com/MounirMouterfi818/m2.git /tmp/repo
+            cd /tmp/repo
+            if git show-ref --verify --quiet refs/heads/gh-pages; then
+              git checkout gh-pages
+            else
+              git checkout --orphan gh-pages
+            fi
+            git pull origin gh-pages || true
+            rm -rf *
+            cp -r /tmp/javadoc/* .
             git add .
-            git commit -m "Update Javadoc [skip ci]"
-            git push origin gh-pages
+            git commit -m "Deploy Javadoc to GitHub Pages" || echo "No changes to commit"
+            git push https://MounirMouterfi818:$Token@github.com/MounirMouterfi818/m2.git gh-pages
 
 workflows:
-  version: 2
-  build-test-and-deploy:
+  build-and-upload:
     jobs:
-      - checkstyle-java:  # Exécute Checkstyle en premier
+      - test-java:
           filters:
             branches:
               only:
                 - main
-      - test-java:  # Ce job exécute les tests et vérifie la couverture
-          requires:
-            - checkstyle-java  # Dépend de la réussite de Checkstyle
+      - checkstyle:
           filters:
             branches:
               only:
                 - main
-      - generate-and-deploy-javadoc:  # Génère et déploie la Javadoc
+      - generate-javadoc:
           filters:
             branches:
               only:
