@@ -63,12 +63,12 @@ jobs:
       - run:
           name: Configure Git for Deployment
           command: |
-            git config --global user.email "circleci@yourdomain.com"
-            git config --global user.name "CircleCI Bot"
+            git config --global user.email "ci@circleci.com"
+            git config --global user.name "CircleCI"
       - run:
           name: Deploy Javadoc to GitHub Pages
           command: |
-            git clone --branch gh-pages https://github.com/<username>/<repository-name>.git gh-pages
+            git clone --branch gh-pages https://github.com/MounirMouterfi818/m2.git gh-pages
             rm -rf gh-pages/*
             cp -R target/site/apidocs/* gh-pages/
             cd gh-pages
@@ -93,8 +93,6 @@ workflows:
               only:
                 - main
       - generate-and-deploy-javadoc:  # Génère et déploie la Javadoc
-          requires:
-            - test-java  # Dépend de la réussite des tests
           filters:
             branches:
               only:
