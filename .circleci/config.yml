@@ -40,3 +40,9 @@ workflows:
             branches:
               only:
                 - main  # Exécute uniquement sur la branche main
+      - test-java:
+          steps:
+            - checkout
+            - run:
+                name: Run Checkstyle
+                command: mvn checkstyle:check  # Exécute Checkstyle pour valider le style du code
