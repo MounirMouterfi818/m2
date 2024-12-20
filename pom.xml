@@ -83,6 +83,27 @@
                     <failsOnError>true</failsOnError>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <failOnError>true</failOnError>
+                    <additionalJOption>
+                        -Xdoclint:all,-missing
+                    </additionalJOption>
+                </configuration>
+            </plugin>
+
+
 
             <!-- jacoco -->
             <plugin>
