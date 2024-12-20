@@ -5,11 +5,11 @@ orbs:
   codecov: codecov/codecov@5
 
 jobs:
-  checkstyle-java:
+  checkstyle-java:  # Job pour valider le style du code avec Checkstyle
     docker:
       - image: cimg/openjdk:22.0
     steps:
-      - checkout
+      - checkout  # Récupère le code source
       - run:
           name: Set JAVA_HOME
           command: |
@@ -18,13 +18,13 @@ jobs:
             echo "JAVA_HOME=$JAVA_HOME"
       - run:
           name: Run Checkstyle
-          command: mvn checkstyle:check
+          command: mvn checkstyle:check  # Exécute Checkstyle pour valider le style du code
 
-  test-java:
+  test-java:  # Job pour exécuter les tests et générer la couverture de code
     docker:
       - image: cimg/openjdk:22.0
     steps:
-      - checkout
+      - checkout  # Récupère le code source
       - run:
           name: Set JAVA_HOME
           command: |
@@ -35,7 +35,7 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
       - run:
           name: Run Maven Tests with Coverage
-          command: mvn verify
+          command: mvn verify  # Exécute les tests Maven avec JaCoCo
       - store_test_results:
           path: target/surefire-reports
       - store_artifacts:
@@ -44,16 +44,22 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
           paths:
             - ~/.m2/repository
-      - codecov/upload
+      - codecov/upload  # Ajoute les résultats de couverture à Codecov
 
-  generate-and-deploy-javadoc:
+  generate-and-deploy-javadoc:  # Job pour générer et déployer la Javadoc
     docker:
       - image: cimg/openjdk:22.0
     steps:
-      - checkout
+      - checkout  # Récupère le code source
+      - run:
+          name: Set JAVA_HOME
+          command: |
+            echo "Setting JAVA_HOME"
+            export JAVA_HOME=/usr/local/openjdk-22
+            echo "JAVA_HOME=$JAVA_HOME"
       - run:
           name: Generate Javadoc
-          command: mvn javadoc:javadoc
+          command: mvn javadoc:javadoc  # Génère la Javadoc
       - run:
           name: Configure Git for Deployment
           command: |
@@ -74,10 +80,22 @@ workflows:
   version: 2
   build-test-and-deploy:
     jobs:
-      - checkstyle-java
-      - test-java:
+      - checkstyle-java:  # Exécute Checkstyle en premier
+          filters:
+            branches:
+              only:
+                - main
+      - test-java:  # Ce job exécute les tests et vérifie la couverture
           requires:
-            - checkstyle-java
-      - generate-and-deploy-javadoc:
+            - checkstyle-java  # Dépend de la réussite de Checkstyle
+          filters:
+            branches:
+              only:
+                - main
+      - generate-and-deploy-javadoc:  # Génère et déploie la Javadoc
           requires:
-            - test-java
+            - test-java  # Dépend de la réussite des tests
+          filters:
+            branches:
+              only:
+                - main
