@@ -19,6 +19,7 @@ Ce projet met en place une pipeline CI/CD utilisant CircleCI pour automatiser l'
 
 ![CircleCI](https://circleci.com/gh/MounirMouterfi818/m2.svg?style=shield)
 ![Codecov](https://codecov.io/gh/MounirMouterfi818/m2/branch/main/graph/badge.svg)
+![CheckStyle Badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/MounirMouterfi818/m2/main/checkstyle-reports/checkstyle-result.xml)
 
 - **CircleCI Badge :** Indicateur du statut actuel des builds dans CircleCI.
 - **Codecov Badge :** Indicateur de la couverture de code pour le projet, généré par Codecov.
